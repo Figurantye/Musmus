@@ -1,0 +1,28 @@
+body{
+    background-color: maroon;
+}
+
+.infernoCop img{
+    flex-direction: column;
+    border-radius: 200px;
+    width: 150px;
+}
+
+.input-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 30%;
+    right: 30%;
+    padding-top: 5%;
+    width: 40%;
+}
+
+.items{
+    width: 30%;
+}
+
+.btn{
+    background-color: slategrey;
+    color: aliceblue;
+}
