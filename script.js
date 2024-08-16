@@ -13,8 +13,11 @@ function showImage(){
         .then(response => response.json())
         .then(data => {
             for (let index = 0; index < data.ObjectIDs.length; index++) {
-                
+                let imgCanva = document.querySelector('canva'+i)
+                imgCanva.src = "https://collectionapi.metmuseum.org/public/collection/v1/objects/" + data.ObjectIDs[i];
             }
         })
-
+        .catch(error => {
+            console.error(`deu merda: ${error}`);
+        })
 }
