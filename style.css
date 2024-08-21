@@ -26,3 +26,13 @@ body{
     background-color: slategrey;
     color: aliceblue;
 }
+
+
+.artis img{
+    justify-content: space-around;
+    width: 50%;
+}
+
+#container {
+    color: white
+}
