@@ -12,7 +12,7 @@ function showImage(){
     let container = document.getElementById('container')
 
     fetch(urlDataCanva)
-    .then(response => response.json())
+        .then(response => response.json())
         .then(data => {
             for (let index = 0; index < data.total; index++) {
                 
@@ -20,29 +20,26 @@ function showImage(){
                 fetch(dados)
                 .then(response => response.json())
                 .then(data2 => {
-                    if (data2.primaryImage == "" || data2.title == "" || data2.title == "undefined" || data2.message == '"Not a valid object"') {
+                    if (data2.primaryImageSmall == "" || data2.title == "" || data2.title == "undefined" || data2.message == "Not a valid object" || !data2.primaryImage) {
                         index++
-                    }
-                    
-                    let newDiv = document.createElement('div')
-                    newDiv.className = 'arts col-3'
-    
-                    let newImg = document.createElement('img')
-                    newImg.id = 'canva'+index
-    
-                    let newDiv2 = document.createElement('div')
-                    newDiv2.id = 'title'+index
-                    newDiv2.className = 'align-items-center'
-    
-                    container.appendChild(newDiv)
-                    newDiv.appendChild(newImg)
-                    newDiv.appendChild(newDiv2)
-                    let imgCanva = document.querySelector('#canva'+index)
-                    imgCanva.src = data2.primaryImage
-                    let canvaName = data2.title
+                    } else {
+                        let newDiv = document.createElement('div')
+                        newDiv.className = 'arts col-3'
+                        let newImg = document.createElement('img')
+                        newImg.src = data2.primaryImageSmall
+                        let title = document.createElement('div')
+                        title.id = 'title'+index
+                        let author = document.createElement('div')
+                        author.id = 'author'+index
+                        container.appendChild(newDiv)
+                        newDiv.appendChild(newImg)
+                        newDiv.appendChild(title)
+                        newDiv.appendChild(author)
 
-                    document.getElementById('title'+index).innerText = canvaName
-                    })
+                        document.getElementById('title'+index).innerText = "title: " + data2.title 
+                        document.getElementById('author'+index).innerText = 'author: '+ data2.constituents[0].name
+                    }
+                })
             }
         })
         .catch(error => {
