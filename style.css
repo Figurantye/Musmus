@@ -1,5 +1,6 @@
 body{
     background-color: maroon;
+    color: white;
 }
 
 .infernoCop img{
@@ -9,9 +10,6 @@ body{
 }
 
 .input-group{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     left: 30%;
     right: 30%;
     padding-top: 5%;
@@ -35,4 +33,9 @@ body{
 
 #container {
     color: white
+}
+
+#inputa{
+    position: sticky;
+    padding-right: 10px;
 }
