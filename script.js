@@ -49,16 +49,6 @@ function showImage(){
                                         title.id = 'title'+index
                                         let author = document.createElement('div')
                                         author.id = 'author'+index
-                                        let fullImg = document.createElement('btn')
-                                        fullImg.classList = 'btn btn-primary'
-                                        fullImg.data.bs.target = '#modalTogle'+index;
-                                        fullImg.data.bs.toggle = 'modal'
-                                        let modalTogle = document.createElement('div')
-                                        modalTogle.classList = 'modal fade'
-                                        modalTogle.id = 'modalTogle'+index
-                                        document.getElementById('modalTogle'+index).innerHTML = '<div class="modal-dialog modal-dialog-centered"> <div class="modal-content"> <div class="modal-header"> <div class="modal-body"> <img href='+data2.primaryImage+'> </div> </div> </div> </div>'
-                                        let imgPopUp = document.createElement('img')
-                                        imgPopUp.href = data2.primaryImage
                                         let newImg = document.createElement('img')
                                         newImg.src = data2.primaryImageSmall
 
@@ -67,8 +57,6 @@ function showImage(){
                                         newDiv.appendChild(fullImg)
                                         newDiv.appendChild(title)
                                         newDiv.appendChild(author)
-                                        fullImg.appendChild(newImg)
-                                        modalTogle.appendChild(imgPopUp)
                                     
                                         document.getElementById('title'+index).innerText = "title: " + data2.title 
                                         document.getElementById('author'+index).innerText = 'author: '+ data2.constituents[0].name
